@@ -45,7 +45,6 @@ return op();
     "||===========================||",
 	"|| saldo:R$ 2.000.000,00 	  ||",
 	"||===========================||",
-    "",
     };
     int tamanho2 = sizeof(linhas2) / sizeof(linhas2[0]);
     printlinha(linhas2, tamanho2);
@@ -58,7 +57,6 @@ char * linhas3 [] = {
    "|| pedido n3:sorvete de baunilha   	 ||",
    "|| pedido n4:sorvete do kanye west 	 ||",
    "||===================================||",
-   "",
 };
 int tamanho3 = sizeof(linhas3) / sizeof(linhas3[0]);
 printlinha(linhas3, tamanho3);
@@ -70,7 +68,6 @@ printlinha(linhas3, tamanho3);
    "|| pedido n3:copos                     	   ||",
    "|| pedido n4:estatua do kanye west     	   ||",
    "||=========================================||",
-   "",
     };
     int tamanho4 = sizeof(linhas4) / sizeof(linhas4[0]);
    printlinha(linhas4, tamanho4);
@@ -82,7 +79,6 @@ printlinha(linhas3, tamanho3);
 "||3.sorvete sabor agua                          	 ||",
 "||4.estatua do kanye west                       	 ||",
 "||==================================================||",
-"",
     };
     int tamanho5 = sizeof(linhas5) / sizeof(linhas5[0]);
     printlinha(linhas5, tamanho5);
