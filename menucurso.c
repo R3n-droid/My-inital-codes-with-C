@@ -88,32 +88,63 @@ printlinha(linhas3, tamanho3);
 int op1 = op();
 switch(op1){
      
-    case 1: system("clear"); saldo0(); getchar(); getchar(); break;
-    case 2: system("clear"); pedidos0(); getchar(); getchar(); break;
-    case 3: system("clear"); compras0(); getchar(); getchar(); break;
-    case 4: system("clear"); return; 
+    case 1: 
+         system("clear"); 
+         saldo0(); 
+         getchar(); getchar(); 
+         break;
+    case 2: 
+         system("clear"); 
+         pedidos0(); 
+         getchar(); getchar(); 
+         break;
+    case 3: 
+         system("clear"); 
+         compras0(); 
+         getchar(); getchar(); 
+         break;
+    case 4: 
+         system("clear"); 
+         return; 
     default:{
         printf("nao eh possivel realizar essa acao\n");
          getchar(); getchar();
+         break;
     }
 }
     }
 }int main(){
-while(1){
-    system("clear");
-    int op2 = menu1();
+
+    int op2;
+
+do{
+   op2 = menu1();
+system("clear");
 switch(op2){
     
-    case 1: system("clear"); financeiro1(); break;
-    case 2: system("clear"); inventario0(); getchar(); getchar(); break;
-    case 3: system("clear"); break;
-    case 4: system("clear"); return 0;
+    case 1: 
+         system("clear"); 
+         financeiro1(); 
+         break;
+    case 2: 
+         system("clear"); 
+         inventario0(); 
+         getchar(); getchar(); 
+         break;
+    case 3: 
+         system("clear"); 
+         break;
+    case 4: 
+         system("clear");
+         break;
     default:{
         printf("nao eh possivel escolher isso\n");
          getchar(); getchar();
-    }
+         break;
+
 }
 }
+}while(op2 != 4);
 
     return 0;
 }

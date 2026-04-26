@@ -82,3 +82,4 @@ for(int u = 0; u < tamanho3; u++){
         printf("%s\n", linhas5[r]);
     }
 }
+
