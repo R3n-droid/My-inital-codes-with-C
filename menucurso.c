@@ -73,12 +73,14 @@ printlinha(linhas3, tamanho3);
    printlinha(linhas4, tamanho4);
 } void inventario0(){
     char * linhas5 [] ={
+
 "||==================================================||",
 "||                		 estoque                 	 ||",
 "||2.assai                                        	 ||",
 "||3.sorvete sabor agua                          	 ||",
 "||4.estatua do kanye west                       	 ||",
 "||==================================================||",
+
     };
     int tamanho5 = sizeof(linhas5) / sizeof(linhas5[0]);
     printlinha(linhas5, tamanho5);
