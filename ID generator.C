@@ -1,6 +1,14 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
+typedef struct{
+    int id;
+    char name[50];
+
+}ID;
+
+
+void load_products(ID itens[], int size);
 
 int op(){
     int Op;
@@ -8,12 +16,6 @@ int op(){
     scanf("%d", &Op);
     return Op;
 }
-
-typedef struct{
-    int id;
-    char name[50];
-
-}ID;
 
 void menu(){
      const char* menu0[] = {
@@ -36,7 +38,7 @@ void menu(){
 
 void products(){
 system("cls");
-printf("======inventory======\n");
+printf("=======inventory=======\n");
  ID itens[] = {
 
         {0,"abacaxi\n"}, 
@@ -48,14 +50,34 @@ printf("======inventory======\n");
 
     };
     int size = sizeof(itens) / sizeof(itens[0]);
-    for(int i = 0; i < size; i++){
-        itens[i].id = 0 + rand() %9000;
-    }
+    load_products(itens, size);
     for(int i = 0; i < size; i++){
         printf("ID: %d | Name: %s\n", itens[i].id, itens[i].name);
     }
     system("pause");
 
+}
+
+void load_products( ID itens[], int size){
+
+    FILE *f = fopen("products.txt","r");
+
+    if(f == NULL){
+        for(int i = 0; i < size; i++){
+            itens[i].id = 0 + rand() %9000;
+        }
+    
+    f = fopen("products.txt", "w");
+    for(int i = 0; i < size; i++){
+        fprintf(f,"%d %s\n", itens[i].id, itens[i].name);
+    }
+    fclose(f);
+} else{
+    for(int i = 0; i < size; i++){
+        fscanf(f,"%d %[^\n]", &itens[i].id, itens[i].name);
+    }
+    fclose(f);
+}
 }
 
 int main(){
