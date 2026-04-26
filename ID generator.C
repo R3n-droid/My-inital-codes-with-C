@@ -16,7 +16,7 @@ typedef struct{
 }ID;
 
 void menu(){
-     char * menu0[] = {
+     const char* menu0[] = {
         "#==============#",
         "#              #",
         "#     MENU     #",
@@ -24,7 +24,7 @@ void menu(){
         "#==============#",
         "1. inventory",
         "2. voltar",
-        "3. Exit"
+        "3. Exit",
 
      };
      int size0 = sizeof(menu0) / sizeof(menu0[0]);
