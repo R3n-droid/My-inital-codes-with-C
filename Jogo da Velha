@@ -1,0 +1,125 @@
+#include <stdio.h>
+int main ()
+{
+//Váriaveís do programa
+int coluna;
+int linha;
+char jogador;
+char sair = 's';
+//Matriz
+char tabuleiro [3][3] = {
+	{' ',' ',' '},
+	{' ',' ',' '},
+	{' ',' ',' '}
+};
+//estrutura de Loop
+do{
+//interface grafica que vai mostrar os valores da matriz
+    printf("\n   %c | %c | %c ", tabuleiro [0][0], tabuleiro[0][1],tabuleiro[0][2]);
+	printf("\n  ---+---+---");
+	printf("\n   %c | %c | %c ", tabuleiro [1][0], tabuleiro[1][1],tabuleiro[1][2]);
+	printf("\n  ---+---+---");
+	printf("\n   %c | %c | %c ", tabuleiro [2][0], tabuleiro[2][1],tabuleiro[2][2]);
+//interação com o usuário
+	printf("\nquem vai jogar?:");
+	scanf("%c", &jogador);
+//ações se o usuário escolher X
+	if(jogador == 'x' || jogador == 'X')
+	{
+//interação com o usuário
+	printf("\ncolunas de 0-2");
+	printf("\nlinhas de 0-2");
+	printf("\nescolha uma linha: ");
+	scanf("%d", &linha);
+	printf("\nescolha uma coluna: ");
+	scanf("%d", &coluna);
+//limitador que não permite o usuário substituir uma casa
+	if(tabuleiro[linha][coluna] != ' ')
+	{
+	    printf("voce nao pode fazer isso😡😡😡😡😡😡");
+	}
+	else
+	{
+	    tabuleiro[linha][coluna] = 'X';
+	}
+	}
+//ações se o usuário escolher O
+		if(jogador == 'o' || jogador == 'O')
+		{
+//interação com o usuário
+	printf("\ncolunas de 0-2");
+	printf("\nlinhas de 0-2");
+	printf("\nescolha uma linha: ");
+	scanf("%d", &linha);
+	printf("\nescolha uma coluna: ");
+	scanf("%d", &coluna);
+//limitador que não permite o usuário substituir uma casa
+	if(tabuleiro[linha][coluna] != ' ')
+	{
+	    printf("\nvoce nao pode fazer isso😡😡😡😡😡😡");
+	}
+	else
+	{
+	    tabuleiro[linha][coluna] = 'O';
+	}
+//limitador de opções
+	if(jogador != 'x' || jogador != 'X' && jogador != 'o'|| jogador != 'O'){
+	    printf("\njoga direito😡😡😡😡😡😡😡😡");
+	}
+	}
+//condições de Vitória
+	if(tabuleiro[0][0] != ' ' && tabuleiro[0][0] == tabuleiro[1][1] && tabuleiro[0][0] == tabuleiro[2][2])
+	{
+	    printf("\nvoce ganhou!!!!!!!!!!!!!!!!!!");
+	    break;
+	}
+	else if(tabuleiro[0][0] != ' ' && tabuleiro[0][0] == tabuleiro[0][1] && tabuleiro[0][0] == tabuleiro[0][2])
+	{
+	    printf("\nvoce ganhou!!!!!!!!!!!!!!!!!!");
+	    break;
+	}
+	else if(tabuleiro[0][2] != ' ' && tabuleiro[0][2] == tabuleiro[1][2] && tabuleiro[0][2] == tabuleiro[2][2])
+	{
+	    printf("\nvoce ganhou!!!!!!!!!!!!!!!!!!");
+	    break;
+}
+else if(tabuleiro[1][0] != ' ' && tabuleiro[1][0] == tabuleiro[1][1] && tabuleiro[1][0] == tabuleiro[1][2])
+{
+	    printf("\nvoce ganhou!!!!!!!!!!!!!!!!!!");
+	    break;
+}
+else if(tabuleiro[0][2] != ' ' && tabuleiro[0][2] == tabuleiro[1][2] && tabuleiro[0][2] == tabuleiro[2][2])
+{
+	    printf("\nvoce ganhou!!!!!!!!!!!!!!!!!!");
+	    break;
+}
+else if(tabuleiro[0][2] != ' ' && tabuleiro[1][1] == tabuleiro[0][2] && tabuleiro[0][2] == tabuleiro[2][0])
+{
+	    printf("\nvoce ganhou!!!!!!!!!!!!!!!!!!");
+	    break;
+}
+else if(tabuleiro[2][0] != ' ' && tabuleiro[2][0] == tabuleiro[2][1] && tabuleiro[2][0] == tabuleiro[2][2])
+{
+	    printf("\nvoce ganhou!!!!!!!!!!!!!!!!!!");
+	    break;
+}
+else if (tabuleiro[0][0] != ' ' && tabuleiro[0][0] == tabuleiro[1][0] && tabuleiro[0][0] == tabuleiro[2][0])
+{
+    printf("\n voce ganhou!!!!!!!!!!!!!!!!!!");
+    break;
+} 
+else if (tabuleiro[0][1] != ' ' && tabuleiro[0][1] == tabuleiro[1][1] && tabuleiro[0][1] == tabuleiro[2][1])
+{
+    printf("\n voce ganhou!!!!!!!!!!!!!!!!!!");
+    break;
+}
+//Verificador de empate
+else if(tabuleiro[0][1] != ' ' && tabuleiro[0][0] != ' ' && tabuleiro[0][2] != ' ' && tabuleiro[1][0] != ' ' && tabuleiro[1][1] != ' ' && tabuleiro[1][2] != ' ' && tabuleiro[2][0] != ' ' && tabuleiro[2][1] != ' ' && tabuleiro[2][2] != ' ')
+{
+    printf("deu velha 😱😱😱😱😱😱😱😱");
+    break;
+}
+}while(sair == 's');
+
+return 0;
+}
